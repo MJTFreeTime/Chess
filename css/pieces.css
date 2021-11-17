@@ -1,0 +1,4 @@
+.square .piece {
+    height: 70px;
+    user-select: none;
+}

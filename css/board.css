@@ -1,0 +1,32 @@
+.chess_board {
+    width: 600px;
+    height: 600px;
+    border-spacing: 0;
+
+    /* Center div */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.chess_board .row {
+    width: 75px;
+    height: 75px;
+    margin: 0;
+    padding: 0;
+}
+
+.square {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#dark {
+    background-color: rgb(125, 135, 150);
+}
+
+#light {
+    background-color: rgb(232, 235, 239);
+}
