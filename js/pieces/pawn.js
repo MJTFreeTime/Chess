@@ -8,11 +8,11 @@ export function validMoves(name, coords) {
             movesArr.push({row: coords.row - 1, col: coords.col});
         }
 
-        if (coords.col > 0 && chessBoard[coords.row - 1][coords.col - 1] != '' && chessBoard[coords.row + 1][coords.col - 1][0] != 'W') {
+        if (coords.col > 0 && chessBoard[coords.row - 1][coords.col - 1] != '' && chessBoard[coords.row - 1][coords.col - 1][0] != 'W') {
             movesArr.push({row: coords.row - 1, col: coords.col - 1});
         }
 
-        if (coords.col < 8 && chessBoard[coords.row - 1][coords.col + 1] != '' && chessBoard[coords.row + 1][coords.col - 1][0] != 'W') {
+        if (coords.col < 8 && chessBoard[coords.row - 1][coords.col + 1] != '' && chessBoard[coords.row - 1][coords.col - 1][0] != 'W') {
             movesArr.push({row: coords.row - 1, col: coords.col + 1});
         }
     }
