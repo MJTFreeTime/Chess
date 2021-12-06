@@ -47,6 +47,24 @@ function isValidMove(name, coords, move) {
     }
 }
 
+function displayValidMoves(validMoves) {
+    if (!validMoves) return;
+
+    let board = document.querySelector(".chess_board");
+    for (let i = 0; i < validMoves.length; ++i) {
+        board.rows[validMoves[i].row].cells[validMoves[i].col].style.backgroundColor = "red";
+    }
+}
+
+function clearValidMoves() {
+    let squares = document.getElementsByClassName('square');
+    for (let i = 0; i < squares.length; ++i) {
+        if (squares[i].style.backgroundColor == "red") {
+            squares[i].style.backgroundColor = '';
+        }
+    }
+}
+
 function movePiece(start, end) {
     let startPos = {row: start.parentNode.rowIndex, col: start.cellIndex};
     let endPos = {row: end.parentNode.rowIndex, col: end.cellIndex};
@@ -60,7 +78,7 @@ function movePiece(start, end) {
         end.appendChild(start.getElementsByTagName('img')[0]);
     }
     else {
-        console.log("INVALID MOVE!")
+        console.log('INVALID MOVE!')
     }
 }
 
@@ -71,6 +89,8 @@ export function initializeMoveEvents() {
     for (let i = 0; i < square.length; ++i) {
         square[i].addEventListener('click', event => {
             if (square[i].getElementsByTagName('img').length > 0 && squareSelected == false) {
+                displayValidMoves(validMoves(square[i].getElementsByTagName('img')[0].id, {row: square[i].parentNode.rowIndex, col: square[i].cellIndex}));
+
                 for (let j = 0; j < square.length; ++j) {
                     if (square[j].style.outline != '') {
                         square[j].style.outline = '';
@@ -81,12 +101,14 @@ export function initializeMoveEvents() {
                 squareSelected = square[i];
             }
             else if (squareSelected && squareSelected != square[i]) {
+                clearValidMoves()
                 movePiece(squareSelected, square[i]);
                 
                 squareSelected.style.outline = '';
                 squareSelected = false;
             }
             else if (squareSelected) {
+                clearValidMoves()
                 squareSelected.style.outline = '';
                 squareSelected = false;
             }

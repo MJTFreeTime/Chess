@@ -1,9 +1,45 @@
-// TO BE IMPLEMENTED //
+import { chessBoard } from '../main/board.js'
+
 export function validMoves(name, coords) {
-    return true;
+    let movesArr = [];
+
+    if (name == "WP") {
+        if (chessBoard[coords.row - 1][coords.col] == '') {
+            movesArr.push({row: coords.row - 1, col: coords.col});
+        }
+
+        if (coords.col > 0 && chessBoard[coords.row - 1][coords.col - 1] != '') {
+            movesArr.push({row: coords.row - 1, col: coords.col - 1});
+        }
+
+        if (coords.col < 8 && chessBoard[coords.row - 1][coords.col + 1] != '') {
+            movesArr.push({row: coords.row - 1, col: coords.col + 1});
+        }
+    }
+    else if (name == "BP") {
+        if (chessBoard[coords.row + 1][coords.col] == '') {
+            movesArr.push({row: coords.row + 1, col: coords.col});
+        }
+
+        if (coords.col > 0 && chessBoard[coords.row + 1][coords.col - 1] != '') {
+            movesArr.push({row: coords.row + 1, col: coords.col - 1});
+        }
+
+        if (coords.col < 8 && chessBoard[coords.row + 1][coords.col + 1] != '') {
+            movesArr.push({row: coords.row + 1, col: coords.col + 1});
+        }
+    }
+
+    return movesArr;
 }
 
-// TO BE IMPLEMENTED //
 export function isValidMove(name, coords, move) {
-    return true;
+    let legalMoves = validMoves(name, coords);
+    for (let i = 0; i < legalMoves.length; ++i) {
+        if (legalMoves[i].row == move.row && legalMoves[i].col == move.col) {
+            return true;
+        }
+    }
+
+    return false;
 }
