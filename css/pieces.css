@@ -1,4 +1,9 @@
 .square .piece {
-    height: 70px;
+    height: 95%;
     user-select: none;
+}
+
+.piece img {
+	height: 100%;
+	width: 100%;
 }

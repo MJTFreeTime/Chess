@@ -1,6 +1,6 @@
 .chess_board {
     width: 600px;
-    height: 600px;
+	height: 600px;
     border-spacing: 0;
 
     /* Center div */
@@ -11,13 +11,15 @@
 }
 
 .chess_board .row {
-    width: 75px;
-    height: 75px;
+	height: 12.5%;
+	width: 100%;
     margin: 0;
     padding: 0;
 }
 
 .square {
+	width: 12.5%;
+	height: 12.5%;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -29,4 +31,8 @@
 
 #light {
     background-color: rgb(232, 235, 239);
+}
+
+.square:hover {
+	background-color: #6fbbd3 !important;
 }
