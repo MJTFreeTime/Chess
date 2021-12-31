@@ -10,7 +10,6 @@ let chessBoard = [
 ];
 
 const express = require("express");
-const { nextTick } = require("process");
 const socket = require("socket.io");
 
 // App setup
