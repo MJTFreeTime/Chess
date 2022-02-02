@@ -1,7 +1,7 @@
 import { chessBoard, setBoardArr } from './board.js'
 import * as Pawn from '../pieces/pawn.js'
 
-const domain = document.domain + ':8080'
+const domain = document.domain
 console.log(domain, { transports: ['websocket'] });
 const socket = io.connect(domain);
 
