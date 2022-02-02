@@ -2,8 +2,8 @@ import { chessBoard, setBoardArr } from './board.js'
 import * as Pawn from '../pieces/pawn.js'
 
 var PORT = 80;
-var domain = document.domain + ":" + PORT;
-console.log(domain);
+var domain = document.domain;
+
 const socket = io.connect(domain, { secure: true, reconnection: true, rejectUnauthorized: false });
 
 let pieces = {
