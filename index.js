@@ -13,7 +13,7 @@ const express = require("express");
 const socket = require("socket.io");
 
 // App setup
-const PORT = 8080;
+const PORT = 80;
 const app = express();
 const http = require("http");
 const server = http.createServer(app);
