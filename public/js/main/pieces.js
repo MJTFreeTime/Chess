@@ -1,10 +1,7 @@
 import { chessBoard, setBoardArr } from './board.js'
 import * as Pawn from '../pieces/pawn.js'
 
-var PORT = 80;
-var domain = "https://" + document.domain + ":" + PORT;
-console.log(domain);
-const socket = io.connect(domain, { secure: true, reconnection: true, rejectUnauthorized: false });
+const socket = io.connect();
 
 let pieces = {
     BR : "https://upload.wikimedia.org/wikipedia/commons/f/ff/Chess_rdt45.svg",
