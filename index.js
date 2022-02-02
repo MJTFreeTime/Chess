@@ -15,7 +15,7 @@ const socket = require("socket.io");
 // App setup
 const PORT = 8080;
 const app = express();
-const http = require("http")
+const http = require("http");
 const server = http.createServer(app);
 
 server.listen(PORT, function () {

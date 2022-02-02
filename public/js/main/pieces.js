@@ -1,7 +1,7 @@
 import { chessBoard, setBoardArr } from './board.js'
 import * as Pawn from '../pieces/pawn.js'
 
-const socket = io();
+const socket = io.connect();
 
 let pieces = {
     BR : "https://upload.wikimedia.org/wikipedia/commons/f/ff/Chess_rdt45.svg",
