@@ -3,7 +3,7 @@ import * as Pawn from '../pieces/pawn.js'
 
 const domain = document.domain + ":8080"
 console.log(domain);
-const socket = io.connect(domain, { transports: ['websocket'] });
+const socket = io.connect();
 
 let pieces = {
     BR : "https://upload.wikimedia.org/wikipedia/commons/f/ff/Chess_rdt45.svg",
