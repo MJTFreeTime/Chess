@@ -3,3 +3,5 @@ import * as Pieces from './main/pieces.js'
 
 Board.initializeBoard();
 Pieces.initializeMoveEvents();
+
+console.log(document.domain);
